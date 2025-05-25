@@ -1,0 +1,203 @@
+/* src/renderer/styles.css - Tema Cyberpunk Lilás/Neon */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap'); /* Fonte com pegada mais "tech" */
+
+:root {
+    --dark-purple: #1a0f29; /* Um roxo bem escuro para o fundo */
+    --deep-lilac: #3c1f58; /* Um lilás mais escuro para containers */
+    --neon-lilac: #d18fff; /* Lilás neon principal */
+    --neon-cyan: #00f6ff;   /* Ciano neon para destaques */
+    --neon-pink: #ff33cc;   /* Pink neon para alertas ou outros destaques */
+    --light-text: #e0c8ff; /* Texto claro, levemente lilás */
+    --input-bg: #25153a;   /* Fundo para inputs */
+}
+
+body {
+    font-family: 'Rajdhani', Arial, sans-serif; /* Nova fonte */
+    margin: 0;
+    background-color: var(--dark-purple);
+    color: var(--light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-shadow: 0 0 3px rgba(209, 143, 255, 0.3); /* Leve brilho no texto geral */
+}
+
+.container {
+    background-color: rgba(60, 31, 88, 0.85); /* var(--deep-lilac) com transparência */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--neon-lilac), 0 0 30px var(--neon-lilac), inset 0 0 10px rgba(209, 143, 255, 0.3);
+    border: 1px solid var(--neon-lilac);
+    width: 380px;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+}
+
+h1 {
+    color: var(--neon-cyan);
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--neon-lilac);
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%; /* Ajustado para 100% pois padding está no box-sizing */
+    padding: 12px 15px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--neon-lilac);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: var(--light-text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1em;
+    box-shadow: inset 0 0 8px rgba(0, 246, 255, 0.2);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder {
+    color: rgba(224, 200, 255, 0.6);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan), inset 0 0 10px rgba(0, 246, 255, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--neon-lilac);
+    color: var(--dark-purple);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px var(--neon-lilac), 0 0 15px var(--neon-lilac);
+}
+
+button:hover, button:focus {
+    background-color: var(--neon-cyan);
+    color: var(--dark-purple);
+    box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+    outline: none;
+}
+
+.message-box {
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 25px;
+    font-weight: 600;
+    display: none; /* Inicia oculto */
+    border-width: 2px;
+    border-style: solid;
+    text-shadow: 0 0 5px currentColor;
+    box-shadow: 0 0 10px currentColor;
+}
+
+/* Mensagem de sucesso específica */
+.message-box.success {
+    background-color: rgba(0, 246, 255, 0.1); /* Fundo ciano neon transparente */
+    color: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+}
+
+/* Mensagem de erro específica */
+.message-box.error {
+    background-color: rgba(255, 51, 204, 0.1); /* Fundo pink neon transparente */
+    color: var(--neon-pink);
+    border-color: var(--neon-pink);
+}
+
+/* Removendo o .error-message antigo se não for mais usado ou adaptando-o */
+.error-message { /* Se ainda for usar para erros inline */
+    color: var(--neon-pink);
+    font-size: 0.9em;
+    margin-top: 5px;
+    min-height: 18px;
+    text-align: left;
+}
+
+
+.link-text {
+    margin-top: 20px;
+    font-size: 0.95em;
+    color: var(--light-text);
+}
+
+.link-text a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-text a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 5px var(--neon-cyan);
+}
+
+/* Estilos para a tela de sucesso */
+.success-container {
+    background-color: rgba(0, 246, 255, 0.15); /* Ciano neon transparente */
+    color: var(--neon-cyan);
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.success-container h2 {
+    color: var(--neon-cyan);
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.success-container p {
+    color: var(--light-text);
+    text-shadow: 0 0 3px var(--light-text);
+}
+
+.success-container button { /* Para o botão de voltar na tela de sucesso */
+    background-color: var(--neon-cyan);
+    color: var(--dark-purple);
+    box-shadow: 0 0 8px var(--neon-cyan), 0 0 15px var(--neon-cyan);
+}
+.success-container button:hover {
+    background-color: var(--neon-lilac);
+    color: var(--dark-purple);
+    box-shadow: 0 0 10px var(--neon-lilac), 0 0 20px var(--neon-lilac), 0 0 30px var(--neon-lilac);
+}

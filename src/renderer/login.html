@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login // Acesso à Rede</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Acesso à Grid</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Identificação (Usuário):</label>
+                <input type="text" id="username" required value="teste" placeholder="Seu codinome">
+            </div>
+            <div class="form-group">
+                <label for="password">Chave de Acesso (Senha):</label>
+                <input type="password" id="password" required value="123" placeholder="Sua chave mestra">
+            </div>
+            <p class="error-message" style="text-align: center; margin-bottom: 10px;">Psst... para logar, precisa se cadastrar primeiro, viu? E vale nota!</p>
+            <button type="submit">AUTENTICAR</button>
+        </form>
+        <div id="messageBox" class="message-box"></div>
+        <p class="link-text">Primeira vez por aqui, novato? <a href="register.html">REGISTRE-SE NA REDE</a></p>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

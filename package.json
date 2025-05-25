@@ -1,0 +1,26 @@
+{
+  "name": "electron-auth-simple",
+  "version": "1.0.0",
+  "description": "App simples de cadastro e login com Electron e MySQL para aula.",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --inspect"
+  },
+  "keywords": [
+    "electron",
+    "mysql",
+    "login",
+    "cadastro"
+  ],
+  "author": "Seu Nome Aqui",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.1.0"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^16.5.0",
+    "mysql2": "^3.9.0"
+  }
+}
